@@ -12,6 +12,27 @@ const router = require('express').Router();
 //     }
 // })
 
+function createUser(username, password) {
+  // Check for duplicates
+  if (existingUsernames.includes(username)) {
+    console.error('Username already taken');
+    return;
+  }
+
+  // Sanitize the input
+  username = username.replace(/[^a-zA-Z0-9]/g, '');
+
+  // Create the user in the database
+  db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, password], (err, result) => {
+    if (err) {
+      console.error('Error creating user:', err);
+    } else {
+      console.log('User created successfully');
+    }
+  });
+}
+
+
 router.get('/homepage', (req, res) => {
     res.render('homepage');
   });
