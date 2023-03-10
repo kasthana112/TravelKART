@@ -1,0 +1,50 @@
+body {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background: black;  
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dropdown {
+    min-width: 15em !important;
+    position: relative;
+    margin: 2em;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    background: purple;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px grey solid;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.selected-clicked {
+    border: 2px grey solid;
+    box-shadow: 0 0 0.8em gray;
+}
+
+.select:hover {
+    background: rgb(51, 51, 51);
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solod #fff;
+    transition: 0.3s;
+}
