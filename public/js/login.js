@@ -1,10 +1,10 @@
 
-const usernameInput = document.getElementById("username");
+const usernameInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const loginButton = document.getElementById("login");
 
 function handleLogin() {
-  const username = usernameInput.value;
+  const email = emailInput.value;
   const password = passwordInput.value;
 
 
@@ -28,3 +28,6 @@ function handleLogin() {
     alert(error.message);
   });
 }
+
+
+LoginButton.addEventListener("click", handleLogin);
