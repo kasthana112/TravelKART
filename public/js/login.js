@@ -1,16 +1,16 @@
 
-const usernameInput = document.getElementById("username");
+const usernameInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const loginButton = document.getElementById("login");
 
 function handleLogin() {
-  const username = usernameInput.value;
+  const email = emailInput.value;
   const password = passwordInput.value;
 
 
   fetch("/login", {
     method: "POST",
-    body: JSON.stringify({ username, password }),
+    body: JSON.stringify({ email, password }),
     headers: {
       "Content-Type": "application/json"
     }
@@ -29,6 +29,5 @@ function handleLogin() {
   });
 }
 
-loginButton.addEventListener("click", handleLogin);
 
-
+LoginButton.addEventListener("click", handleLogin);
