@@ -1,20 +1,26 @@
+const loginFormHandler = async (event) => {
+  event.preventDefault();
 
-const usernameInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const loginButton = document.getElementById("login");
+  // Collect values from the login form
+  const email = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
+console.log(email);
+console.log(password);
 
-function handleLogin() {
-  const email = emailInput.value;
-  const password = passwordInput.value;
+  if (email && password) {
+    // Send a POST request to the API endpoint
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-
-  fetch("/login", {
-    method: "POST",
-    body: JSON.stringify({ email, password }),
-    headers: {
-      "Content-Type": "application/json"
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/homepage');
+    } else {
+      alert(response.statusText);
     }
-    
   })
   .then(response => {
     if (!response.ok) {
@@ -22,13 +28,34 @@ function handleLogin() {
     }
     return response.json();
 
-  })
-  .catch(error => {
-    console.error(error);
-   
-    alert(error.message);
-  });
-}
+const signupFormHandler = async (event) => {
+  event.preventDefault();
 
+  const name = document.querySelector('#name-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+console.log(name);
+console.log(email);
+console.log(password);
+  if (name && email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ name, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
-LoginButton.addEventListener("click", handleLogin);
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
+
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);
