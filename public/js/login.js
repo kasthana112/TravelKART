@@ -1,12 +1,11 @@
-const usernameInput = document.getElementById("email");
+
+const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
 const loginButton = document.getElementById("login");
 
 function handleLogin() {
-  const username = emailInput.value.trim();
+  const username = usernameInput.value;
   const password = passwordInput.value;
-
-LoginButton.addEventListener("click", handleLogin);
 
 
   fetch("/login", {
