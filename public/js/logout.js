@@ -21,6 +21,8 @@ function handleLogout() {
   });
 }
 
+
+
 logoutButton.addEventListener("click", handleLogout);
 
 
