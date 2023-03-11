@@ -1,4 +1,6 @@
-[
+const { Location } = require('../models');
+
+const locationdata = [
  {
    "trip_id": 1,
    "destination": "London, UK",
@@ -330,3 +332,7 @@
    "transportation_cost": "$300 "
  }
 ]
+
+const seedLocationData = () => Location.bulkCreate(locationdata);
+
+module.exports = seedLocationData;
