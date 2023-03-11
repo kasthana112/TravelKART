@@ -21,12 +21,14 @@ console.log(password);
     } else {
       alert(response.statusText);
     }
-  })
+  }
   .then(response => {
     if (!response.ok) {
       throw new Error("Failed to login");
     }
     return response.json();
+
+  })
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
@@ -51,6 +53,7 @@ console.log(password);
     }
   }
 };
+}
 
 document
   .querySelector('.login-form')
