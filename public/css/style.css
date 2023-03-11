@@ -1,11 +1,12 @@
 body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  background: black;  
+  background: rgb(36, 35, 35);  
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  color: azure;
 }
 
 .dropdown {
