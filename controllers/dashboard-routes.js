@@ -3,25 +3,31 @@ const { User, Location } = require('../models');
 //const withAuth = require('../utils/auth');
 
 //withAuth,
-router.get('/',  async (req, res) => {
+router.get('/:destination',  async (req, res) => {
+  console.log("hello");
   try {
-    // const userData = await User.findAll({
-    //   attributes: { exclude: ['password'] },
-    //   order: [['name', 'ASC']],
-    // });
-    // const users = userData.map((location) => location.get({ plain: true }));
-    //const users = userData.map((project) => project.get({ plain: true }));
+ const locationData = await Location.findAll({
+  where:{
+    destination: req.params.destination
+  }
+ })
 
-    res.render('dashboard', {
-      // users,
-      logged_in: req.session.logged_in
-    });
+ const locData = locationData.map((location) =>location.get({plain: true}));
+ console.log(locData);
+ res.json(locData);
+
+    // res.render('dashboard', {
+    //   locData,
+    //   logged_in: req.session.logged_in
+    // });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-
+router.get('/', (req,res) => {
+res.render('dashboard');
+})
 
 router.get('/results', (req, res) => {
   // If the user is already logged in, redirect the request to another route
