@@ -1,4 +1,4 @@
-<h3>Welcome to TravelKART!</h3>
+{{!-- <h3>Welcome to TravelKART!</h3>
 
   <h5> How would you like your travel experience?</h5>
 
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<script src="./js/dropdown.js"></script>
+<script src="./js/dropdown.js"></script> --}}
 
 
 
@@ -39,3 +39,29 @@
 
 
 
+
+
+ {{!-- {{#each results as |result| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2> --}}
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{!-- {{{get_emoji}}}
+      <a href="/project/{{project.id}}">{{result.name}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="money">💲</span>
+      <!-- Pass needed_funding value to the helper function --> --}}
+      {{!-- <span class="dollar-amount">{{format_amount result.needed_funding}}</span>
+      needed!
+    </p>
+    <p>Created by {{result.user.name}} on {{format_date result.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{result.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
+ --}}

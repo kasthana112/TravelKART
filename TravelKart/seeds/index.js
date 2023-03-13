@@ -1,18 +1,18 @@
-const sequelize = require('../config/connection');
-const { User, Location } = require('../models');
-const seedLocationData = require('./locationData');
-const seedUserData = require('./user');
+// const sequelize = require('../config/connection');
+// const { User, Location } = require('../models');
+// const seedLocationData = require('./locationData');
+// const seedUserData = require('./user');
 
 
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+// const seedDatabase = async () => {
+//   await sequelize.sync({ force: true });
 
-  await seedUserData();
+//   await seedUserData();
 
-  await seedLocationData();
+//   await seedLocationData();
   
 
-  process.exit(0);
-};
+//   process.exit(0);
+// };
 
-seedDatabase();
+// seedDatabase();
