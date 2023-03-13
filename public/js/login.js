@@ -17,7 +17,7 @@ console.log(password);
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/homepage');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
@@ -41,7 +41,7 @@ console.log(password);
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
