@@ -92,3 +92,8 @@ body {
     display: block;
     opacity: 1;
 }
+
+
+.form-input {
+    color:#fff;
+}
